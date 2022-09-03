@@ -3,5 +3,7 @@ docker run --platform linux/amd64 -p 3306:3306 --name myMysql -v $(pwd)/data:/va
   --datadir=/var/lib/mysql \
   --user=mysql \
   --server-id=1 \
-  --log-bin=/var/lib/mysql/mysql-bin.log \
-  --binlog_do_db=test
+  --binlog-format=ROW  \
+  --log-bin=/var/lib/mysql/mysql-bin.log  \
+  --character-set-server=utf8mb4 \
+  --collation-server=utf8mb4_unicode_ci
